@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="coffee">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GameHub</title>
+    <link href="../src/output.css" rel="stylesheet" />
+</head>
+<body>
+<header>
+</header>
+<main>
+
+    <div class="hero bg-base-200 min-h-screen">
+        <div class="hero-content flex-col lg:flex-row-reverse">
+
+            <!-- Tekst powitalny -->
+            <div class="text-center lg:text-left">
+                <h1 class="text-5xl font-bold">Zaloguj się!</h1>
+                <p class="py-6">
+                    Dodaj ulubione gry, podziel się wrażeniami z rozgrywki i nie przegab żadnej gry!
+                </p>
+            </div>
+
+            <!-- Karta z formularzem -->
+            <div class="card bg-base-100 w-full max-w-md shrink-0 shadow-2xl">
+                <div class="card-body">
+                    <form action="">
+                        <div class="mt-4">
+                            <label class="floating-label">
+                                <span>Your Email</span>
+                                <input type="text" id="email" placeholder="Email" class="input input-md w-full" />
+                            </label>
+                            <p id="error_email" class="text-error text-xs mt-1"></p>
+                        </div>
+
+                        <div class="mt-4">
+                            <label class="floating-label">
+                                <span>Password</span>
+                                <input type="password" id="password" placeholder="Hasło" class="input input-md w-full" />
+                            </label>
+                            <p id="error_password" class="text-error text-xs mt-1"></p>
+                        </div>
+
+                        <div class="form-control mt-6">
+                            <div class="flex gap-4">
+                                <button type="submit" class="btn btn-primary w-full">Zaloguj</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="validationLogin.js"></script>
+</body>
+</html>

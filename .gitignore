@@ -2,7 +2,7 @@ node_modules/
 dist/
 build/
 .idea/
-src/output.css
+output.css
 
 
 

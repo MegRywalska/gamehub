@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="coffee">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GameHub</title>
+    <link href="../src/output.css" rel="stylesheet" />
+</head>
+<body>
+<header>
+</header>
+<main>
+
+    <div class="hero bg-base-200 min-h-screen">
+        <div class="hero-content flex-col lg:flex-row-reverse">
+
+            <!-- Tekst powitalny -->
+            <div class="text-center lg:text-left">
+                <h1 class="text-5xl font-bold">Zarejestruj się!</h1>
+                <p class="py-6">
+                    Stwórz konto, aby dołączyć do naszej społeczności graczy, zapisywać ulubione gry i wiele więcej!
+                </p>
+            </div>
+
+            <!-- Karta z formularzem -->
+            <div class="card bg-base-100 w-full max-w-md shrink-0 shadow-2xl">
+                <div class="card-body">
+
+                <form action="">
+                    <div class="mt-4 ">
+                        <label class="floating-label ">
+                            <span>Name</span>
+                            <input type="text" id="username" placeholder="Nazwa użytkownika" class="input input-md w-full" />
+                        </label>
+                        <p id="error_username" class=" text-error text-xs mt-1"></p>
+                    </div>
+
+                    <div class="mt-4">
+                        <label class="floating-label">
+                            <span>Your Email</span>
+                            <input type="text" id="email" placeholder="Email" class="input input-md w-full" />
+                        </label>
+                        <p id="error_email" class="text-error text-xs mt-1"></p>
+                    </div>
+
+                    <div class="mt-4">
+                        <label class="floating-label">
+                            <span>Password</span>
+                            <input type="password" id="password" placeholder="Hasło" class="input input-md w-full" />
+                        </label>
+                        <p id="error_password" class="text-error text-xs mt-1"></p>
+                    </div>
+
+                    <div class="mt-4">
+                        <label class="floating-label">
+                            <span>Password confirm</span>
+                            <input type="password" id="password_confirmation" placeholder="Powtórz hasło" class="input input-md w-full" />
+                            </label>
+                        <p id="error_password_confirmation" class="text-error text-xs mt-1"></p>
+                    </div>
+
+                    <div class="mt-4">
+                        <label>
+                        <input type="checkbox" id="statute" class="checkbox checkbox-primary" />
+                              Akceptuje warunki regulaminu
+                        </label>
+                        <p id="error_statute" class="text-error text-xs mt-1"></p>
+                    </div>
+
+                    <div class="form-control mt-6">
+                        <div class="flex gap-4">
+                            <button type="reset" class="btn btn-secondary w-1/2">Resetuj</button>
+                            <button type="submit" class="btn btn-primary w-1/2">Zarejestruj</button>
+                        </div>
+                    </div>
+
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="validationRegistration.js"></script>
+</body>
+</html>
