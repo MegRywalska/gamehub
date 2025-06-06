@@ -30,7 +30,7 @@
                     <div class="mt-4 ">
                         <label class="floating-label ">
                             <span>Name</span>
-                            <input type="text" id="username" placeholder="Nazwa użytkownika" class="input input-md w-full" />
+                            <input type="text" id="username" name="username" placeholder="Nazwa użytkownika" class="input input-md w-full" required/>
                         </label>
                         <p id="error_username" class=" text-error text-xs mt-1"></p>
                     </div>
@@ -38,7 +38,7 @@
                     <div class="mt-4">
                         <label class="floating-label">
                             <span>Your Email</span>
-                            <input type="text" id="email" placeholder="Email" class="input input-md w-full" />
+                            <input type="email" id="email" name="email" placeholder="Email" class="input input-md w-full" required/>
                         </label>
                         <p id="error_email" class="text-error text-xs mt-1"></p>
                     </div>
@@ -46,7 +46,7 @@
                     <div class="mt-4">
                         <label class="floating-label">
                             <span>Password</span>
-                            <input type="password" id="password" placeholder="Hasło" class="input input-md w-full" />
+                            <input type="password" id="password" name="password" placeholder="Hasło" class="input input-md w-full" required />
                         </label>
                         <p id="error_password" class="text-error text-xs mt-1"></p>
                     </div>
@@ -54,14 +54,14 @@
                     <div class="mt-4">
                         <label class="floating-label">
                             <span>Password confirm</span>
-                            <input type="password" id="password_confirmation" placeholder="Powtórz hasło" class="input input-md w-full" />
+                            <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Powtórz hasło" class="input input-md w-full" required/>
                             </label>
                         <p id="error_password_confirmation" class="text-error text-xs mt-1"></p>
                     </div>
 
                     <div class="mt-4">
                         <label>
-                        <input type="checkbox" id="statute" class="checkbox checkbox-primary" />
+                        <input type="checkbox" id="statute" name="statute" class="checkbox checkbox-primary" />
                               Akceptuje warunki regulaminu
                         </label>
                         <p id="error_statute" class="text-error text-xs mt-1"></p>
@@ -73,6 +73,8 @@
                             <button type="submit" class="btn btn-primary w-1/2">Zarejestruj</button>
                         </div>
                     </div>
+
+                    <p class="text-sm mt-2">Masz już konto? <a href="login.html" class="link link-primary">Zaloguj się</a></p>
 
                 </form>
                 </div>

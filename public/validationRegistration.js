@@ -8,16 +8,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const statuteCheckbox = document.getElementById("statute");
 
     const showError = (id, message) => {
+
         const errorP = document.getElementById(`error_${id}`);
         if (errorP) errorP.textContent = message;
     };
 
     const clearErrors = () => {
+
         const errorMessages = document.querySelectorAll("p[id^='error_']");
         errorMessages.forEach(el => el.textContent = "");
     };
 
-    form.addEventListener("submit", function (e) {
+    form.addEventListener("submit", async function (e) {
+
         e.preventDefault();
         clearErrors();
 
@@ -57,7 +60,25 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (!hasError) {
-            form.submit();
+            try {
+                const response = await fetch("http://localhost:3000/register", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({username, email, password})
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    showError("email", data.message || "Error")
+                    return;
+                }
+
+                alert("Registration ended with a success.")
+                window.location.href="login.html";
+            } catch (e) {
+                alert("Error: " + e);
+            }
         }
     });
 

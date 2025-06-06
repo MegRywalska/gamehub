@@ -29,7 +29,7 @@
                         <div class="mt-4">
                             <label class="floating-label">
                                 <span>Your Email</span>
-                                <input type="text" id="email" placeholder="Email" class="input input-md w-full" />
+                                <input type="email" id="email" name="email" placeholder="Email" class="input input-md w-full" required/>
                             </label>
                             <p id="error_email" class="text-error text-xs mt-1"></p>
                         </div>
@@ -37,7 +37,7 @@
                         <div class="mt-4">
                             <label class="floating-label">
                                 <span>Password</span>
-                                <input type="password" id="password" placeholder="Hasło" class="input input-md w-full" />
+                                <input type="password" id="password" name="password" placeholder="Hasło" class="input input-md w-full" required/>
                             </label>
                             <p id="error_password" class="text-error text-xs mt-1"></p>
                         </div>
@@ -47,6 +47,8 @@
                                 <button type="submit" class="btn btn-primary w-full">Zaloguj</button>
                             </div>
                         </div>
+
+                        <p class="text-sm mt-2">Nie masz konta? <a href="registration.html" class="link link-primary">Zarejestruj się</a></p>
 
                     </form>
                 </div>

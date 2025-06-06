@@ -19,26 +19,52 @@ document.addEventListener("DOMContentLoaded", function () {
         errorMessages.forEach(el => el.textContent = "");
     };
 
-    form.addEventListener("submit", function (e) {
+    form.addEventListener("submit", async function (e) {
         e.preventDefault();
         clearErrors();
-
 
         const email = emailInput.value.trim();
         const password = passwordInput.value.trim();
 
-        let hasError = false;
-
-
-        if (email !== mockUser.email || password !== mockUser.password) {
-            showError("email", "Podano zły email lub hasło.");
-            showError("password", "Podano zły email lub hasło.");
-            hasError = true;
+        if (!email || !password) {
+            if (!email) showError("email", "Email jest wymagany.");
+            if (!password) showError("password", "Hasło jest wymagane.");
+            return;
         }
 
-        if (!hasError) {
-            form.submit();
+        try {
+            const response = await fetch("http://localhost:3000/login", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({email, password})
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                showError("email", "Podano zły email lub hasło.");
+                showError("password", "Podano zły email lub hasło.");
+                return;
+            }
+            localStorage.setItem("token", data.token);
+            alert("Login successfull");
+            window.location.href="dashboard.html";
+        }catch (e) {
+            alert("Login failed");
         }
+
+
+    //     let hasError = false;
+    //
+    //     if (email !== mockUser.email || password !== mockUser.password) {
+    //         showError("email", "Podano zły email lub hasło.");
+    //         showError("password", "Podano zły email lub hasło.");
+    //         hasError = true;
+    //     }
+    //
+    //     if (!hasError) {
+    //         form.submit();
+    //     }
     });
 
     form.addEventListener("reset", () => {
