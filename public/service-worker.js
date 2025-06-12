@@ -3,7 +3,7 @@ const urlsToCache = [
     '/gamehub/',
     '/gamehub/dashboard.html',
     '/gamehub/dashboard.js',
-    '/gamehub/login.html',
+    '/gamehub/index.html',
     '/gamehub/registration.html',
     '/gamehub/validationLogin.js',
     '/gamehub/validationRegistration.js',
