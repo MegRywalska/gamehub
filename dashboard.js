@@ -9,7 +9,7 @@ async function loadGames(page = 1) {
     try {
         gameList.innerHTML = '';
 
-        const response = await fetch(`http://localhost:3000/api/games?page=${page}&page_size=${pageSize}`);
+        const response = await fetch(`https://gamehub-ygi9.onrender.com/api/games?page=${page}&page_size=${pageSize}`);
         const data = await response.json();
 
         console.log("Received data from the backend", data);
