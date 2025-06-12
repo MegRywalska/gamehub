@@ -25,7 +25,7 @@ const SECRET_KEY = 'SecretKey';
 const adapter = new JSONFile('db.json');
 const db = new Low(adapter, {users: []});
 
-app.use(cors({ origin: 'https://megrywalska.github.io/',}));
+app.use(cors({ origin: 'https://megrywalska.github.io',}));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
