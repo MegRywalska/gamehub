@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 alert("Registration ended with a success.")
-                window.location.href="login.html";
+                window.location.href="index.html";
             } catch (e) {
                 alert("Error: " + e);
             }
