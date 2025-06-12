@@ -1,0 +1,17 @@
+{
+  "name": "GameHub",
+  "short_name": "GH",
+  "theme_color": "#261b25",
+  "background_color": "#261b25",
+  "display": "standalone",
+  "scope": "/gamehub",
+  "start_url": "/gamehub",
+  "icons": [
+    {
+      "src": "images/gamehub-high-resolution-logo-transparent.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
