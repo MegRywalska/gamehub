@@ -5,6 +5,24 @@
       "username": "mango",
       "email": "gosia.rywalska@gmail.com",
       "password": "$2b$10$FcixBgsSvRYKEKpB4MBSFORXUrK3SxfxUsjWHHkp6vZJAfBJs.ZuG"
+    },
+    {
+      "id": 1749729060399,
+      "username": "mango1",
+      "email": "testprogramming.mryw@gmail.com",
+      "password": "$2b$10$X8m1aaMRlFKPZcChkTaiJe6J.qUM1PvPv0Z8lFI2aPeftnavduty6"
+    },
+    {
+      "id": 1749736799623,
+      "username": "mango2",
+      "email": "testprogramming3.mryw@gmail.com",
+      "password": "$2b$10$P8DvFC6.vlOMRSeqbQ5KEuQNTc6DITuuiI/H4fD/TOb8Aqd00pGBq"
+    },
+    {
+      "id": 1749758097616,
+      "username": "testprogramming5.mryw",
+      "email": "testprogramming5.mryw@gmail.com",
+      "password": "$2b$10$CYgBQR9bAyvKPFQyZ0O0ueAUWE.trDaDc/QTwocHXRvu/SeE.d29C"
     }
   ]
 }

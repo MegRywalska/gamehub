@@ -16,8 +16,8 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3000;
 const SECRET_KEY = 'SecretKey';
-// const SECRET_KEY = process.env.SECRET_KEY;
-// const RAWG_API_KEY = process.env.RAWG_API_KEY;
+// const SECRET_KEY = .env.SECRET_KEY;
+// const RAWG_API_KEY = .env.RAWG_API_KEY;
 // console.log("RAWG_API_KEY:", RAWG_API_KEY);
 // console.log("Fetching from:", `https://api.rawg.io/api/games?key=${RAWG_API_KEY}`);
 
@@ -82,10 +82,6 @@ app.get('/register', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'registration.html'))
 });
 
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`)
-});
-
 app.get('/api/games', async (req, res) => {
 
     const {page= 1, page_size = 21} = req.query;
@@ -123,4 +119,8 @@ app.get('/api/games', async (req, res) => {
         console.error('Error fetching games from API', error);
         res.status(500).json({ error: 'Failed to fetch games' });
     }
+});
+
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`)
 });

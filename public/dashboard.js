@@ -67,3 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 })
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker
+            .register('/gamehub/service-worker.js')
+            .then(reg => console.log('✅ Service Worker zarejestrowany:', reg.scope))
+            .catch(err => console.error('❌ Błąd rejestracji:', err));
+    });
+}
