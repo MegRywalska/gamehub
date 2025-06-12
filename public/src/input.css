@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import "../../node_modules/tailwindcss/dist/lib.d.mts";
 @plugin "daisyui";
 
 /*@tailwind base;*/
