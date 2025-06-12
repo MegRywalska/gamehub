@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         try {
-            const response = await fetch("http://localhost:3000/login", {
+            const response = await fetch("https://gamehub-ygi9.onrender.com/login", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({email, password})
