@@ -15,9 +15,7 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const SECRET_KEY = 'SecretKey';
-// const SECRET_KEY = .env.SECRET_KEY;
-// const RAWG_API_KEY = .env.RAWG_API_KEY;
+
 // console.log("RAWG_API_KEY:", RAWG_API_KEY);
 // console.log("Fetching from:", `https://api.rawg.io/api/games?key=${RAWG_API_KEY}`);
 
@@ -70,7 +68,7 @@ app.post('/login', async (req, res) => {
     const isPasswordCorrect = await bcrypt.compare(password, user.password)
     if (!isPasswordCorrect) return res.status(401).json({ message: 'Bad Password' })
 
-    const token = jwt.sign({ username: user.username, email: user.email }, SECRET_KEY, { expiresIn: '1d' })
+    const token = jwt.sign({ username: user.username, email: user.email }, process.env.SECRET_KEY, { expiresIn: '1d' })
     res.json({ message: 'User logged in successfully', token })
 });
 
@@ -86,7 +84,7 @@ app.get('/api/games', async (req, res) => {
 
     const {page= 1, page_size = 21} = req.query;
     try {
-        const response = await fetch(`https://api.rawg.io/api/games?key=af8a48c3701c48ebb94d747492418674&page=${page}&page_size=${page_size}`);
+        const response = await fetch(`https://api.rawg.io/api/games?key=${process.env.RAWG_API_KEY}&page=${page}&page_size=${page_size}`);
         const data = await response.json();
 
         console.log('RAWG API Response:', data);
